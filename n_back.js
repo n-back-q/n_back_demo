@@ -110,11 +110,10 @@ var feedback = {
     var html = "<div style='width:800px;'>"+
       "<p>All done!</p>"+
       "<p>You correctly identified "+n_correct+" of the "+n_match+" matching items.</p>"+
-      "<p>You incorrectly identified "+false_alarms+" of the "+n_nonmatch+" non-matching items as matches.</p>"
+      "<p>You incorrectly identified "+false_alarms+" of the "+n_nonmatch+" non-matching items as matches.</p>"+
+      "Press any key to exit the test"
     
     return html;
   },
-  choices: jsPsych.NO_KEYS
 }
 timeline.push(feedback);
-
