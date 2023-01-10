@@ -1,10 +1,7 @@
 var timeline = [];
-
 var n_back_set = ['Z', 'X', 'C', 'V', 'B', 'N'];
 var sequence = [];
-
 var how_many_back = 2;
-
 var sequence_length = 7;
 
 /* Instructions */
@@ -121,6 +118,3 @@ var feedback = {
 }
 timeline.push(feedback);
 
-jsPsych.init({
-  timeline: timeline
-})
