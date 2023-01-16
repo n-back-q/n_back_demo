@@ -35,7 +35,7 @@ var instructions_3 = {
   stimulus:
     '<div style="width: 800px;">' +
     "<p>The sequence will begin on the next screen.</p>" +
-    "<p>Remember: press the M key if the letter on the screen matches the letter that appeared two letters ago.</p>" +
+    "<p>Remember: press the M key if the letter on the screen matches the letter that appeared three letters ago.</p>" +
     "</div>",
   choices: ["I'm ready to start!"],
 };
