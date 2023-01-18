@@ -2,7 +2,7 @@ var timeline = [];
 var n_back_set = ["Z", "X", "C", "V", "B", "N"];
 var sequence = [];
 var how_many_back = 4;
-var sequence_length = 26;
+var sequence_length = 32;
 
 /* Instructions */
 
@@ -20,7 +20,7 @@ var instructions_2 = {
   type: "html-button-response",
   stimulus:
     '<div style="width: 800px;">' +
-    "<p>You will see a sequence of 20 letters presented one at a time. Your task is to determine if the letter on the screen matches " +
+    "<p>You will see a sequence of 32 letters presented one at a time. Your task is to determine if the letter on the screen matches " +
     "the letter that appeared <span style='font-weight: bold;'>three</span> letters before.</p>" +
     '<p>If the letter is match <span style="font-weight: bold;">press the M key.</span></p>' +
     "<p>For example, if you saw the sequence X, C, <b>V</b>, B, Z, <b>V</b> you would press the M key when the <b>second V</b> appeared on the screen.</p>" +
