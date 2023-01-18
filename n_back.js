@@ -1,8 +1,8 @@
 var timeline = [];
 var n_back_set = ["Z", "X", "C", "V", "B", "N"];
 var sequence = [];
-var how_many_back = 3;
-var sequence_length = 20;
+var how_many_back = 4;
+var sequence_length = 26;
 
 /* Instructions */
 
@@ -118,7 +118,7 @@ var feedback = {
     var test_trials = jsPsych.data
       .get()
       .filter({ phase: "test" })
-      .last(sequence_length - 3);
+      .last(sequence_length - 4);
     var n_match = test_trials.filter({ match: true }).count();
     var n_nonmatch = test_trials.filter({ match: false }).count();
     var n_correct = test_trials.filter({ match: true, correct: true }).count();
