@@ -10,7 +10,7 @@ var instructions_1 = {
   type: "html-button-response",
   stimulus:
     '<div style="width: 800px;">' +
-    "<p>This 3-back task will test your ability to hold information in short-term, temporary memory. This is called working memory.</p>" +
+    "<p>This 4-back task will test your ability to hold information in short-term, temporary memory. This is called working memory.</p>" +
     "</div>",
   choices: ["Continue"],
 };
