@@ -21,9 +21,9 @@ var instructions_2 = {
   stimulus:
     '<div style="width: 800px;">' +
     "<p>You will see a sequence of 32 letters presented one at a time. Your task is to determine if the letter on the screen matches " +
-    "the letter that appeared <span style='font-weight: bold;'>three</span> letters before.</p>" +
+    "the letter that appeared <span style='font-weight: bold;'>four</span> letters before.</p>" +
     '<p>If the letter is match <span style="font-weight: bold;">press the M key.</span></p>' +
-    "<p>For example, if you saw the sequence X, C, <b>V</b>, B, Z, <b>V</b> you would press the M key when the <b>second V</b> appeared on the screen.</p>" +
+    "<p>For example, if you saw the sequence X, <b>V</b>, C, B, Z, <b>V</b> you would press the M key when the <b>second V</b> appeared on the screen.</p>" +
     "<p>You do not need to press any key when there is not a match.</p>" +
     "</div>",
   choices: ["Continue"],
@@ -35,7 +35,7 @@ var instructions_3 = {
   stimulus:
     '<div style="width: 800px;">' +
     "<p>The sequence will begin on the next screen.</p>" +
-    "<p>Remember: press the M key if the letter on the screen matches the letter that appeared three letters ago.</p>" +
+    "<p>Remember: press the M key if the letter on the screen matches the letter that appeared four letters ago.</p>" +
     "</div>",
   choices: ["I'm ready to start!"],
 };
