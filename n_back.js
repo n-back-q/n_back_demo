@@ -1,7 +1,7 @@
 var timeline = [];
 var n_back_set = ["Z", "X", "C", "V", "B", "N"];
 var sequence = [];
-var how_many_back = 4;
+var how_many_back = 3;
 var sequence_length = 32;
 
 /* Instructions */
@@ -10,7 +10,7 @@ var instructions_1 = {
   type: "html-button-response",
   stimulus:
     '<div style="width: 800px;">' +
-    "<p>This 4-back task will test your ability to hold information in short-term, temporary memory. This is called working memory.</p>" +
+    "<p>This 3-back task will test your ability to hold information in short-term, temporary memory. This is called working memory.</p>" +
     "</div>",
   choices: ["Continue"],
 };
@@ -21,9 +21,9 @@ var instructions_2 = {
   stimulus:
     '<div style="width: 800px;">' +
     "<p>You will see a sequence of 32 letters presented one at a time. Your task is to determine if the letter on the screen matches " +
-    "the letter that appeared <span style='font-weight: bold;'>four</span> letters before.</p>" +
+    "the letter that appeared <span style='font-weight: bold;'>three</span> letters before.</p>" +
     '<p>If the letter is match <span style="font-weight: bold;">press the M key.</span></p>' +
-    "<p>For example, if you saw the sequence X, <b>V</b>, C, B, Z, <b>V</b> you would press the M key when the <b>second V</b> appeared on the screen.</p>" +
+    "<p>For example, if you saw the sequence X, <b>V</b>, C, B, <b>V</b>, Z you would press the M key when the <b>second V</b> appeared on the screen.</p>" +
     "<p>You do not need to press any key when there is not a match.</p>" +
     "</div>",
   choices: ["Continue"],
@@ -35,7 +35,7 @@ var instructions_3 = {
   stimulus:
     '<div style="width: 800px;">' +
     "<p>The sequence will begin on the next screen.</p>" +
-    "<p>Remember: press the M key if the letter on the screen matches the letter that appeared four letters ago.</p>" +
+    "<p>Remember: press the M key if the letter on the screen matches the letter that appeared three letters ago.</p>" +
     "</div>",
   choices: ["I'm ready to start!"],
 };
@@ -118,7 +118,7 @@ var feedback = {
     var test_trials = jsPsych.data
       .get()
       .filter({ phase: "test" })
-      .last(sequence_length - 4);
+      .last(sequence_length - 3);
     var n_match = test_trials.filter({ match: true }).count();
     var n_nonmatch = test_trials.filter({ match: false }).count();
     var n_correct = test_trials.filter({ match: true, correct: true }).count();
