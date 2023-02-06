@@ -2,7 +2,7 @@ var timeline = [];
 var n_back_set = ["Z", "X", "C", "V", "B", "N"];
 var sequence = [];
 var how_many_back = 3;
-var sequence_length = 32;
+var sequence_length = 10;
 
 /* Instructions */
 
@@ -10,7 +10,7 @@ var instructions_1 = {
   type: "html-button-response",
   stimulus:
     '<div style="width: 800px;">' +
-    "<p>This 3-back task will test your ability to hold information in short-term, temporary memory. This is called working memory.</p>" +
+    "<p>This the demo of the 3-back task.</p>" +
     "</div>",
   choices: ["Continue"],
 };
@@ -20,11 +20,11 @@ var instructions_2 = {
   type: "html-button-response",
   stimulus:
     '<div style="width: 800px;">' +
-    "<p>You will see a sequence of 32 letters presented one at a time. Your task is to determine if the letter on the screen matches " +
+    "<p>You will see a sequence of 10 letters presented one at a time. Your task is to determine if the letter on the screen matches " +
     "the letter that appeared <span style='font-weight: bold;'>three</span> letters before.</p>" +
-    '<p>If the letter is match <span style="font-weight: bold;">press the M key.</span></p>' +
-    "<p>For example, if you saw the sequence X, <b>V</b>, C, B, <b>V</b>, Z you would press the M key when the <b>second V</b> appeared on the screen.</p>" +
-    "<p>You do not need to press any key when there is not a match.</p>" +
+    '<p>If the letter is match <span style="font-weight: bold;">press the <b>Match</b> button.</span></p>' +
+    "<p>For example, if you saw the sequence X, <b>V</b>, C, B, <b>V</b>, Z you would press the <b>Match</b> button when the <b>second V</b> appeared on the screen.</p>" +
+    "<p>You do not need to press anything when there is not a match.</p>" +
     "</div>",
   choices: ["Continue"],
 };
@@ -35,7 +35,7 @@ var instructions_3 = {
   stimulus:
     '<div style="width: 800px;">' +
     "<p>The sequence will begin on the next screen.</p>" +
-    "<p>Remember: press the M key if the letter on the screen matches the letter that appeared three letters ago.</p>" +
+    "<p>Remember: press the <b>Match</b> button if the letter on the screen matches the letter that appeared three letters ago.</p>" +
     "</div>",
   choices: ["I'm ready to start!"],
 };
@@ -53,7 +53,7 @@ timeline.push(fixation);
 /* N Back sequence trials */
 
 var n_back_trial = {
-  type: "html-keyboard-response",
+  type: "html-button-response",
   stimulus: function () {
     if (sequence.length < how_many_back) {
       var letter = jsPsych.randomization.sampleWithoutReplacement(
@@ -78,7 +78,7 @@ var n_back_trial = {
     sequence.push(letter);
     return '<span style="font-size: 96px;">' + letter + "</span>";
   },
-  choices: ["M"],
+  choices: ["Match"],
   trial_duration: 1500,
   response_ends_trial: false,
   post_trial_gap: 500,
@@ -88,10 +88,10 @@ var n_back_trial = {
   },
   on_finish: function (data) {
     if (data.match == true) {
-      data.correct = data.key_press != null;
+      data.correct = data.button_pressed != null;
     }
     if (data.match == false) {
-      data.correct = data.key_press === null;
+      data.correct = data.button_pressed === null;
     }
   },
 };
@@ -139,7 +139,7 @@ var feedback = {
       " of the " +
       n_nonmatch +
       " non-matching items as matches.</p>" +
-      "Press any key to exit the test";
+      "Close the page to exit this demo or click here to try the demo again if you need";
 
     return html;
   },
