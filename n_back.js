@@ -139,7 +139,7 @@ var feedback = {
       " of the " +
       n_nonmatch +
       " non-matching items as matches.</p>" +
-      "Close the page to exit this demo or click here to try the demo again if you need";
+      "Close the page to exit this demo or click <a href='https://n-back-q.github.io/n_back_demo/'>here</a> to try the demo again if you need";
 
     return html;
   },
